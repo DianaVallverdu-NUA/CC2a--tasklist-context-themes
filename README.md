@@ -10,10 +10,18 @@ npm run reset-project
 
 This workshop covered the definitions of main Node.js and React language. We started a To Do list that is left for homework to finish.
 
-# Homework
+# Homework - Step 1
 
 For next week, you will have to:
-- Create a new component: 'Task' with the following properties
+1. Create a new component: 'Task' with:
+  - Props expecting a string element named 'description'
+  - Displays a 'View', containing a checkbox and the description text.
+  - An inner boolean state that handles whether the task has been checked as complete.
+  - A variable style that strikes through the task description when the task is complete.
+2. From the `index.tsx` file, import the Task component and display a task with a description of your choice, e.g. "Finish Homework".
+
+
+# Homework - Step 2
 
 
 ## Learn more
