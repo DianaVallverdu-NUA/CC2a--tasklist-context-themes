@@ -36,6 +36,9 @@ You will need to use an [array state](https://react.dev/learn/updating-arrays-in
 
 **Additional Challenge:** Can you add a 'Remove Task' button to the Task component, that removes said task from the list?
 
+# Homework - Step 3
+
+Style your To Do list
 
 ## Learn more
 
