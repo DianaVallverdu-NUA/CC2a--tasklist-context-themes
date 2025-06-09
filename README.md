@@ -15,22 +15,34 @@ This workshop covered the definitions of main Node.js and React language. We sta
 For next week, you will have to:
 1. Create a new component 'Task' with:
 - Props expecting a string element named 'description'
-- Displays a 'View', containing a checkbox and the description text.
+- Displays a horizontal 'View', containing a checkbox and the description text.
 - An inner boolean state that handles whether the task has been checked as complete.
 - A variable style that strikes through the task description when the task is complete.
 2. From the `index.tsx` file, import the Task component and display a task with a description of your choice, e.g. "Finish Homework".
 
+**Challenge:** How might you change the style of your Task?
+<details>
+  <summary>Hint</summary>
+You will need to use an <a href="https://react.dev/learn/updating-arrays-in-state">array state</a>.
+</details>
 
 # Homework - Step 2
 
-1. Create a new component 'Add Task' with:
+1. Create a new component 'Add Task' with a horizontal 'View' containing:
 - An Input Text
 - A Button 'Add Task'
+<details>
+  <summary>Hint</summary>
+You will need to use an <a href="https://react.dev/learn/updating-arrays-in-state#removing-from-an-array">array of objects</a> with ids
+</details>
 
 **Challenge:** Can you use a state in your index.html to add tasks to the display?
 
 **Additional Challenge:** Can you add a 'Remove Task' button to the Task component, that removes said task from the list?
 
+# Homework - Step 3
+
+Style your To Do list
 
 ## Learn more
 
