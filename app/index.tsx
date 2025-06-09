@@ -2,16 +2,35 @@ import AddTask from "@/components/AddTask";
 import SetName from "@/components/SetName";
 import Task from "@/components/Task";
 import Title from "@/components/Title";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { View } from "react-native";
+
+type IdDescriptionPair = {
+  id: number;
+  description: string;
+};
 
 export default function Index() {
   const [myName, setMyName] = useState<string>();
-  const [taskList, setTaskList] = useState<string[]>([]);
+  const [maxId, setMaxId] = useState<number>(0);
+  const [taskList, setTaskList] = useState<IdDescriptionPair[]>([]);
 
   const addTask = (task: string) => {
-    setTaskList([...taskList, task]);
+    const taskObject = {
+      id: maxId,
+      description: task,
+    };
+    setTaskList([...taskList, taskObject]);
+    setMaxId(maxId + 1);
   };
+
+  const deleteTask = (taskId: number) => {
+    setTaskList(taskList.filter((task) => task.id !== taskId));
+  };
+
+  useEffect(() => {
+    addTask("Finish Homework");
+  }, []);
 
   return (
     <View
@@ -23,10 +42,16 @@ export default function Index() {
     >
       <SetName setMyName={setMyName} />
       <Title myName={myName} />
-      <Task description="Finish Homework" />
 
-      {taskList.map((task, index) => {
-        return <Task key={index} description={task} />;
+      {taskList.map((task) => {
+        return (
+          <Task
+            key={task.id}
+            id={task.id}
+            description={task.description}
+            deleteTask={deleteTask}
+          />
+        );
       })}
 
       <AddTask addTask={addTask} />
