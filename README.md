@@ -24,7 +24,7 @@ For next week, you will have to:
 
 # Homework - Step 2
 
-1. Create a new component 'Add Task' with:
+1. Create a new component 'Add Task' with a horizontal 'View' containing:
 - An Input Text
 - A Button 'Add Task'
 
