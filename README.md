@@ -21,7 +21,10 @@ For next week, you will have to:
 2. From the `index.tsx` file, import the Task component and display a task with a description of your choice, e.g. "Finish Homework".
 
 **Challenge:** How might you change the style of your Task?
-*Hint:* You will need to use an [array state](https://react.dev/learn/updating-arrays-in-state).
+<details>
+  <summary>Hint</summary>
+You will need to use an [array state](https://react.dev/learn/updating-arrays-in-state).
+</details>
 
 # Homework - Step 2
 
