@@ -1,20 +1,31 @@
+// react
+import { useEffect, useState } from "react";
+
+// react native
+import { View } from "react-native";
+
+// custom
 import AddTask from "@/components/AddTask";
 import SetName from "@/components/SetName";
 import Task from "@/components/Task";
 import Title from "@/components/Title";
-import { useEffect, useState } from "react";
-import { View } from "react-native";
 
+// types & interfaces
 type IdDescriptionPair = {
   id: number;
   description: string;
 };
 
+// main class
 export default function Index() {
+  // title state
   const [myName, setMyName] = useState<string>();
+
+  // tasklist state
   const [maxId, setMaxId] = useState<number>(0);
   const [taskList, setTaskList] = useState<IdDescriptionPair[]>([]);
 
+  // tasklist functions
   const addTask = (task: string) => {
     const taskObject = {
       id: maxId,
@@ -28,10 +39,12 @@ export default function Index() {
     setTaskList(taskList.filter((task) => task.id !== taskId));
   };
 
+  // init functions
   useEffect(() => {
     addTask("Finish Homework");
   }, []);
 
+  // JSX
   return (
     <View
       style={{
@@ -40,9 +53,11 @@ export default function Index() {
         alignItems: "center",
       }}
     >
+      {/* Title with custom name */}
       <SetName setMyName={setMyName} />
       <Title myName={myName} />
 
+      {/* Display tasks */}
       {taskList.map((task) => {
         return (
           <Task
@@ -54,6 +69,7 @@ export default function Index() {
         );
       })}
 
+      {/* Add New Task */}
       <AddTask addTask={addTask} />
     </View>
   );

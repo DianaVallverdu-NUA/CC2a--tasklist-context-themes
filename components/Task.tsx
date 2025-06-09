@@ -8,13 +8,18 @@ interface TaskProps {
 }
 
 const Task = (props: TaskProps) => {
+  // extract props
   const { description, id, deleteTask } = props;
 
+  // state - manage when checkbox is checked
   const [checked, setChecked] = useState<Boolean>(false);
 
   return (
     <View style={{ flexDirection: "row", alignItems: "center" }}>
+      {/* checkbox input */}
       <input type="checkbox" onChange={() => setChecked(!checked)}></input>
+
+      {/* display task description */}
       <Text
         style={{
           textDecorationLine: checked ? "line-through" : "none",
@@ -23,6 +28,8 @@ const Task = (props: TaskProps) => {
       >
         {description}
       </Text>
+
+      {/* button to delete task from main tasklist */}
       <Button
         color="red"
         title="Delete Task"
