@@ -20,6 +20,7 @@ For next week, you will have to:
 - A variable style that strikes through the task description when the task is complete.
 2. From the `index.tsx` file, import the Task component and display a task with a description of your choice, e.g. "Finish Homework".
 
+**Challenge:** How might you change the style of your Task?
 
 # Homework - Step 2
 
