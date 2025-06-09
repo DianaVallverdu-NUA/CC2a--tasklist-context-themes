@@ -13,11 +13,14 @@ interface AddTaskProps {
 const AddTask = (props: AddTaskProps) => {
   // export props
   const { addTask } = props;
-  
+
   // task state - stores temporary description
   const [task, setTask] = useState<string>("");
 
-  
+  // handlers
+  const onButtonPress = () => {
+    addTask(task);
+  };
 
   // JSX
   return (
@@ -30,12 +33,7 @@ const AddTask = (props: AddTaskProps) => {
       ></TextInput>
 
       {/* button to add task to main list */}
-      <Button
-        title="Add Task"
-        onPress={() => {
-          addTask(task);
-        }}
-      ></Button>
+      <Button title="Add Task" onPress={onButtonPress}></Button>
     </View>
   );
 };

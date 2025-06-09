@@ -14,10 +14,19 @@ const Task = (props: TaskProps) => {
   // state - manage when checkbox is checked
   const [checked, setChecked] = useState<Boolean>(false);
 
+  // handlers
+  const onCheckboxChange = () => {
+    setChecked(!checked);
+  };
+
+  const onDeleteHandler = () => {
+    deleteTask(id);
+  };
+
   return (
     <View style={{ flexDirection: "row", alignItems: "center" }}>
       {/* checkbox input */}
-      <input type="checkbox" onChange={() => setChecked(!checked)}></input>
+      <input type="checkbox" onChange={onCheckboxChange}></input>
 
       {/* display task description */}
       <Text
@@ -33,7 +42,7 @@ const Task = (props: TaskProps) => {
       <Button
         color="red"
         title="Delete Task"
-        onPress={() => deleteTask(id)}
+        onPress={onDeleteHandler}
       ></Button>
     </View>
   );

@@ -13,10 +13,14 @@ interface SetNameProps {
 const SetName = (props: SetNameProps) => {
   // extract props
   const { setMyName } = props;
-  
+
   // state - stores temporary name
   const [newName, setNewName] = useState<string>();
 
+  // handlers
+  const onPressHandler = () => {
+    setMyName(newName);
+  };
 
   return (
     <View style={{ flexDirection: "row" }}>
@@ -28,16 +32,9 @@ const SetName = (props: SetNameProps) => {
       ></TextInput>
 
       {/* Button to update from main component */}
-      <Button
-        title={"Update My Name"}
-        onPress={() => {
-          setMyName(newName);
-        }}
-      ></Button>
+      <Button title={"Update My Name"} onPress={onPressHandler}></Button>
     </View>
   );
 };
 
 export default SetName;
-
-
