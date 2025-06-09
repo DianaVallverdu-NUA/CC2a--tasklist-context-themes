@@ -13,15 +13,23 @@ This workshop covered the definitions of main Node.js and React language. We sta
 # Homework - Step 1
 
 For next week, you will have to:
-1. Create a new component: 'Task' with:
-  - Props expecting a string element named 'description'
-  - Displays a 'View', containing a checkbox and the description text.
-  - An inner boolean state that handles whether the task has been checked as complete.
-  - A variable style that strikes through the task description when the task is complete.
+1. Create a new component 'Task' with:
+- Props expecting a string element named 'description'
+- Displays a 'View', containing a checkbox and the description text.
+- An inner boolean state that handles whether the task has been checked as complete.
+- A variable style that strikes through the task description when the task is complete.
 2. From the `index.tsx` file, import the Task component and display a task with a description of your choice, e.g. "Finish Homework".
 
 
 # Homework - Step 2
+
+1. Create a new component 'Add Task' with:
+- An Input Text
+- A Button 'Add Task'
+
+**Challenge:** Can you use a state in your index.html to add tasks to the display?
+
+**Additional Challenge:** Can you add a 'Remove Task' button to the Task component, that removes said task from the list?
 
 
 ## Learn more
