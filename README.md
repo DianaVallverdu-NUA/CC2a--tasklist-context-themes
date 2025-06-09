@@ -23,7 +23,7 @@ For next week, you will have to:
 **Challenge:** How might you change the style of your Task?
 <details>
   <summary>Hint</summary>
-You will need to use an (array state)[https://react.dev/learn/updating-arrays-in-state].
+You will need to use an <a href="https://react.dev/learn/updating-arrays-in-state">array state</a>.
 </details>
 
 # Homework - Step 2
@@ -33,7 +33,7 @@ You will need to use an (array state)[https://react.dev/learn/updating-arrays-in
 - A Button 'Add Task'
 <details>
   <summary>Hint</summary>
-You will need to use an (array of objects)[https://react.dev/learn/updating-arrays-in-state#removing-from-an-array]. with ids
+You will need to use an <a href="https://react.dev/learn/updating-arrays-in-state#removing-from-an-array">array of objects</a> with ids
 </details>
 
 **Challenge:** Can you use a state in your index.html to add tasks to the display?
