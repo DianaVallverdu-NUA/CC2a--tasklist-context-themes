@@ -1,5 +1,5 @@
 import { TaskListContext } from "@/contexts/TaskListContext";
-import { Checkbox } from '@futurejj/react-native-checkbox';
+import { Checkbox } from "@futurejj/react-native-checkbox";
 import Icon from "@react-native-vector-icons/fontawesome6";
 import React, { useContext, useState } from "react";
 import { StyleSheet, Text, TouchableHighlight, View } from "react-native";
@@ -32,15 +32,15 @@ const Task = (props: TaskProps) => {
       <View style={styles.leftArea}>
         {/* checkbox input */}
         <Checkbox
-        status={checked ? 'checked' : 'unchecked'}
-        onPress={onCheckboxChange}
-      />
+          status={checked ? "checked" : "unchecked"}
+          onPress={onCheckboxChange}
+        />
 
         {/* display task description */}
         <Text
           style={{
+            ...styles.descriptionText,
             textDecorationLine: checked ? "line-through" : "none",
-            margin: 5,
           }}
         >
           {description}
@@ -50,7 +50,7 @@ const Task = (props: TaskProps) => {
       <TouchableHighlight onPress={onDeleteHandler}>
         <View>
           <Text>
-            <Icon name="trash" size={20} color="" iconStyle="solid" />
+            <Icon name="trash-can" size={20} color="red" iconStyle="solid" />
           </Text>
         </View>
       </TouchableHighlight>
@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   leftArea: { flexDirection: "row" },
+  descriptionText: { marginTop: 7 },
 });
 
 export default Task;

@@ -37,7 +37,7 @@ const InputAndButton = (props: InputAndButtonProps) => {
 
 const styles = StyleSheet.create({
   container: { flexDirection: "row" },
-  textInput: { backgroundColor: "white", marginRight: 5 },
+  textInput: { backgroundColor: "white", marginRight: 5, minWidth: 200 },
 });
 
 export default InputAndButton;
