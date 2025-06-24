@@ -27,14 +27,17 @@ const iconNameToButtonTitle = (name: IconNames) => {
 
 const TouchableIcon = (props: TouchableIconProps) => {
   const { name, size, color, onPress } = props;
-  return (
+
+  return Platform.OS != "web" ? (
     <TouchableHighlight onPress={onPress}>
-      {Platform.OS != "web" ? (
-        <Icon name={name} size={size} color={color} iconStyle="solid" />
-      ) : (
-        <Button color={color} title={iconNameToButtonTitle(name)}></Button>
-      )}
+      <Icon name={name} size={size} color={color} iconStyle="solid" />
     </TouchableHighlight>
+  ) : (
+    <Button
+      onPress={onPress}
+      color={color}
+      title={iconNameToButtonTitle(name)}
+    ></Button>
   );
 };
 
