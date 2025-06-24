@@ -1,16 +1,16 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import CheckboxDescriptionTask from "./CheckboxDespcriptionTask";
-import EditDeleteTask from "./EditDeleteTask";
+import CheckboxDescription from "./task/CheckboxDescription";
+import EditDelete from "./task/EditDelete";
 
 const Task = () => {
   return (
     <View style={styles.container}>
       {/* checkbox & description */}
-      <CheckboxDescriptionTask />
+      <CheckboxDescription />
 
       {/* button to edit task from main tasklist */}
-      <EditDeleteTask />
+      <EditDelete />
     </View>
   );
 };

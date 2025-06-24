@@ -3,7 +3,7 @@ import { Checkbox } from "@futurejj/react-native-checkbox";
 import { useContext, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-const CheckboxDescriptionTask = () => {
+const CheckboxDescription = () => {
   // extract props
   const { description } = useContext(TaskContext);
 
@@ -44,4 +44,4 @@ const styles = StyleSheet.create({
   descriptionText: { marginTop: 7 },
 });
 
-export default CheckboxDescriptionTask;
+export default CheckboxDescription;

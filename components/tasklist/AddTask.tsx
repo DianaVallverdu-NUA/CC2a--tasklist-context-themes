@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 // react native
 import { TaskListContext } from "@/contexts/TaskListContext";
 import { StyleSheet, View } from "react-native";
-import InputAndButton from "./InputAndButton";
+import InputAndButton from "../common/InputAndButton";
 
 // main class
 const AddTask = () => {

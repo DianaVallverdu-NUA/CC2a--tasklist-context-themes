@@ -3,7 +3,7 @@ import { useState } from "react";
 
 // react native
 import { StyleSheet, View } from "react-native";
-import InputAndButton from "./InputAndButton";
+import InputAndButton from "./common/InputAndButton";
 
 // types & interfaces
 interface SetNameProps {

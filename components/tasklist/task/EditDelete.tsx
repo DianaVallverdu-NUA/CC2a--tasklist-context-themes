@@ -2,9 +2,9 @@ import { TaskContext } from "@/contexts/TaskContext";
 import { TaskListContext } from "@/contexts/TaskListContext";
 import { useContext } from "react";
 import { StyleSheet, View } from "react-native";
-import TouchableIcon from "./TouchableIcon";
+import TouchableIcon from "../../common/TouchableIcon";
 
-const EditDeleteTask = () => {
+const EditDelete = () => {
   const { deleteTask } = useContext(TaskListContext);
   const { id } = useContext(TaskContext);
 
@@ -36,4 +36,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default EditDeleteTask;
+export default EditDelete;
