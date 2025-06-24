@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Text, View } from "react-native";
+import { Button, StyleSheet, Text, View } from "react-native";
 
 interface TaskProps {
   description: string;
@@ -24,16 +24,8 @@ const Task = (props: TaskProps) => {
   };
 
   return (
-    <View
-      style={{
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "space-between",
-        width: 300,
-        marginBottom: 4,
-      }}
-    >
-      <View style={{ flexDirection: "row" }}>
+    <View style={styles.container}>
+      <View style={styles.leftArea}>
         {/* checkbox input */}
         <input type="checkbox" onChange={onCheckboxChange}></input>
 
@@ -57,5 +49,17 @@ const Task = (props: TaskProps) => {
     </View>
   );
 };
+
+// styles
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    width: 300,
+    marginBottom: 4,
+  },
+  leftArea: { flexDirection: "row" },
+});
 
 export default Task;

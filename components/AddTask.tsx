@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 // react native
-import { Button, TextInput, View } from "react-native";
+import { Button, StyleSheet, TextInput, View } from "react-native";
 
 // types & interfaces
 interface AddTaskProps {
@@ -24,12 +24,12 @@ const AddTask = (props: AddTaskProps) => {
 
   // JSX
   return (
-    <View style={{ flexDirection: "row", margin: 10 }}>
+    <View style={styles.container}>
       {/* task description input */}
       <TextInput
         value={task}
         onChangeText={setTask}
-        style={{ backgroundColor: "white" }}
+        style={styles.textInput}
       ></TextInput>
 
       {/* button to add task to main list */}
@@ -37,5 +37,10 @@ const AddTask = (props: AddTaskProps) => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: { flexDirection: "row", margin: 10 },
+  textInput: { backgroundColor: "white" },
+});
 
 export default AddTask;
