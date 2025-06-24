@@ -1,15 +1,17 @@
-import { useState } from "react";
+import { TaskListContext } from "@/contexts/TaskListContext";
+import { useContext, useState } from "react";
 import { Button, StyleSheet, Text, View } from "react-native";
 
 interface TaskProps {
   description: string;
   id: number;
-  deleteTask: (taskId: number) => void;
 }
 
 const Task = (props: TaskProps) => {
   // extract props
-  const { description, id, deleteTask } = props;
+  const { description, id } = props;
+
+  const { deleteTask } = useContext(TaskListContext);
 
   // state - manage when checkbox is checked
   const [checked, setChecked] = useState<Boolean>(false);

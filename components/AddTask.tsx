@@ -1,19 +1,15 @@
 // react
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 // react native
+import { TaskListContext } from "@/contexts/TaskListContext";
 import { StyleSheet, View } from "react-native";
 import InputAndButton from "./InputAndButton";
 
-// types & interfaces
-interface AddTaskProps {
-  addTask: (task: string) => void;
-}
-
 // main class
-const AddTask = (props: AddTaskProps) => {
+const AddTask = () => {
   // export props
-  const { addTask } = props;
+  const { addTask } = useContext(TaskListContext);
 
   // task state - stores temporary description
   const [task, setTask] = useState<string>("");
