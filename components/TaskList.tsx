@@ -14,9 +14,10 @@ const TaskList = () => {
       {taskList.map((task) => {
         return (
           <TaskContext.Provider
+            key={task.id}
             value={{ description: task.description, id: task.id }}
           >
-            <Task key={task.id}/>
+            <Task />
           </TaskContext.Provider>
         );
       })}

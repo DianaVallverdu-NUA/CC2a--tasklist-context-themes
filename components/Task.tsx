@@ -3,7 +3,7 @@ import { TaskListContext } from "@/contexts/TaskListContext";
 import { Checkbox } from "@futurejj/react-native-checkbox";
 import React, { useContext, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import TouchableIcon from "./TouchableIcon";
+import EditDeleteTask from "./EditDeleteTask";
 
 const Task = () => {
   // extract props
@@ -25,7 +25,7 @@ const Task = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.subContainer}>
+      <View style={styles.leftSection}>
         {/* checkbox input */}
         <Checkbox
           status={checked ? "checked" : "unchecked"}
@@ -44,17 +44,7 @@ const Task = () => {
       </View>
 
       {/* button to edit task from main tasklist */}
-      <View style={styles.subContainer}>
-        <TouchableIcon
-          onPress={onDeleteHandler}
-          name="pencil"
-          size={20}
-          color="blue"
-        />
-
-        {/* button to delete task from main tasklist */}
-        <TouchableIcon name="trash-can" size={20} color="red" />
-      </View>
+        <EditDeleteTask />
     </View>
   );
 };
@@ -68,10 +58,8 @@ const styles = StyleSheet.create({
     width: 300,
     marginBottom: 4,
   },
-  subContainer: {
+  leftSection: {
     flexDirection: "row",
-    justifyContent: "space-between",
-    minWidth: 45,
   },
   descriptionText: { marginTop: 7 },
 });
