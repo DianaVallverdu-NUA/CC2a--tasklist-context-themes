@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 // react native
-import { View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 // custom
 import AddTask from "@/components/AddTask";
@@ -47,11 +47,7 @@ export default function Index() {
   // JSX
   return (
     <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
+      style={styles.container}
     >
       {/* Title with custom name */}
       <SetName setMyName={setMyName} />
@@ -74,3 +70,11 @@ export default function Index() {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    marginTop: 30
+  }
+});
