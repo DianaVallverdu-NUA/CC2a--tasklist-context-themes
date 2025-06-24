@@ -1,7 +1,7 @@
 import { TaskContext } from "@/contexts/TaskContext";
 import { TaskListContext } from "@/contexts/TaskListContext";
 import { useContext } from "react";
-import { StyleSheet, View } from "react-native";
+import { Platform, StyleSheet, View } from "react-native";
 import TouchableIcon from "../../common/TouchableIcon";
 
 const EditDelete = () => {
@@ -32,7 +32,10 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     justifyContent: "space-between",
-    minWidth: 45,
+    ...Platform.select({
+      web: { minWidth: 120 },
+      default: { minWidth: 45 },
+    }),
   },
 });
 
