@@ -24,19 +24,29 @@ const Task = (props: TaskProps) => {
   };
 
   return (
-    <View style={{ flexDirection: "row", alignItems: "center" }}>
-      {/* checkbox input */}
-      <input type="checkbox" onChange={onCheckboxChange}></input>
+    <View
+      style={{
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        width: 300,
+        marginBottom: 4,
+      }}
+    >
+      <View style={{ flexDirection: "row" }}>
+        {/* checkbox input */}
+        <input type="checkbox" onChange={onCheckboxChange}></input>
 
-      {/* display task description */}
-      <Text
-        style={{
-          textDecorationLine: checked ? "line-through" : "none",
-          margin: 5,
-        }}
-      >
-        {description}
-      </Text>
+        {/* display task description */}
+        <Text
+          style={{
+            textDecorationLine: checked ? "line-through" : "none",
+            margin: 5,
+          }}
+        >
+          {description}
+        </Text>
+      </View>
 
       {/* button to delete task from main tasklist */}
       <Button
