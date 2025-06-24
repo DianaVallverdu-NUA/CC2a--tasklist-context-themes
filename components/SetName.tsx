@@ -2,7 +2,8 @@
 import { useState } from "react";
 
 // react native
-import { Button, StyleSheet, TextInput, View } from "react-native";
+import { StyleSheet, View } from "react-native";
+import InputAndButton from "./InputAndButton";
 
 // types & interfaces
 interface SetNameProps {
@@ -24,22 +25,18 @@ const SetName = (props: SetNameProps) => {
 
   return (
     <View style={styles.container}>
-      {/* Name input */}
-      <TextInput
+      <InputAndButton
         value={newName}
         onChangeText={setNewName}
-        style={styles.textInput}
-      ></TextInput>
-
-      {/* Button to update from main component */}
-      <Button title={"Update My Name"} onPress={onPressHandler}></Button>
+        buttonText="Update My Name"
+        onButtonPress={onPressHandler}
+      />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: { flexDirection: "row" },
-  textInput: { backgroundColor: "white" },
 });
 
 export default SetName;

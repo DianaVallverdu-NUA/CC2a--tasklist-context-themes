@@ -2,7 +2,8 @@
 import { useState } from "react";
 
 // react native
-import { Button, StyleSheet, TextInput, View } from "react-native";
+import { StyleSheet, View } from "react-native";
+import InputAndButton from "./InputAndButton";
 
 // types & interfaces
 interface AddTaskProps {
@@ -19,28 +20,26 @@ const AddTask = (props: AddTaskProps) => {
 
   // handlers
   const onButtonPress = () => {
-    addTask(task);
+    if (task != "") addTask(task);
+    setTask("");
   };
 
   // JSX
   return (
     <View style={styles.container}>
       {/* task description input */}
-      <TextInput
+      <InputAndButton
         value={task}
+        buttonText="Add Task"
         onChangeText={setTask}
-        style={styles.textInput}
-      ></TextInput>
-
-      {/* button to add task to main list */}
-      <Button title="Add Task" onPress={onButtonPress}></Button>
+        onButtonPress={onButtonPress}
+      />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: { flexDirection: "row", margin: 10 },
-  textInput: { backgroundColor: "white" },
+  container: { margin: 10 },
 });
 
 export default AddTask;
