@@ -29,7 +29,7 @@ const Task = (props: TaskProps) => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.leftArea}>
+      <View style={styles.subContainer}>
         {/* checkbox input */}
         <Checkbox
           status={checked ? "checked" : "unchecked"}
@@ -46,14 +46,22 @@ const Task = (props: TaskProps) => {
           {description}
         </Text>
       </View>
-      {/* button to delete task from main tasklist */}
-      <TouchableHighlight onPress={onDeleteHandler}>
-        <View>
+
+      {/* button to edit task from main tasklist */}
+      <View style={styles.subContainer}>
+        <TouchableHighlight>
+          <Text>
+            <Icon name="pencil" size={20} color="blue" iconStyle="solid" />
+          </Text>
+        </TouchableHighlight>
+
+        {/* button to delete task from main tasklist */}
+        <TouchableHighlight onPress={onDeleteHandler}>
           <Text>
             <Icon name="trash-can" size={20} color="red" iconStyle="solid" />
           </Text>
-        </View>
-      </TouchableHighlight>
+        </TouchableHighlight>
+      </View>
     </View>
   );
 };
@@ -67,7 +75,11 @@ const styles = StyleSheet.create({
     width: 300,
     marginBottom: 4,
   },
-  leftArea: { flexDirection: "row" },
+  subContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    minWidth: 45,
+  },
   descriptionText: { marginTop: 7 },
 });
 
