@@ -1,6 +1,8 @@
 import { TaskListContext } from "@/contexts/TaskListContext";
-import { useContext, useState } from "react";
-import { Button, StyleSheet, Text, View } from "react-native";
+import { Checkbox } from '@futurejj/react-native-checkbox';
+import Icon from "@react-native-vector-icons/fontawesome6";
+import React, { useContext, useState } from "react";
+import { StyleSheet, Text, TouchableHighlight, View } from "react-native";
 
 interface TaskProps {
   description: string;
@@ -29,7 +31,10 @@ const Task = (props: TaskProps) => {
     <View style={styles.container}>
       <View style={styles.leftArea}>
         {/* checkbox input */}
-        <input type="checkbox" onChange={onCheckboxChange}></input>
+        <Checkbox
+        status={checked ? 'checked' : 'unchecked'}
+        onPress={onCheckboxChange}
+      />
 
         {/* display task description */}
         <Text
@@ -41,13 +46,14 @@ const Task = (props: TaskProps) => {
           {description}
         </Text>
       </View>
-
       {/* button to delete task from main tasklist */}
-      <Button
-        color="red"
-        title="Delete Task"
-        onPress={onDeleteHandler}
-      ></Button>
+      <TouchableHighlight onPress={onDeleteHandler}>
+        <View>
+          <Text>
+            <Icon name="trash" size={20} color="" iconStyle="solid" />
+          </Text>
+        </View>
+      </TouchableHighlight>
     </View>
   );
 };
