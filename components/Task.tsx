@@ -1,17 +1,13 @@
+import { TaskContext } from "@/contexts/TaskContext";
 import { TaskListContext } from "@/contexts/TaskListContext";
 import { Checkbox } from "@futurejj/react-native-checkbox";
-import Icon from "@react-native-vector-icons/fontawesome6";
 import React, { useContext, useState } from "react";
-import { StyleSheet, Text, TouchableHighlight, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import TouchableIcon from "./TouchableIcon";
 
-interface TaskProps {
-  description: string;
-  id: number;
-}
-
-const Task = (props: TaskProps) => {
+const Task = () => {
   // extract props
-  const { description, id } = props;
+  const { description, id } = useContext(TaskContext);
 
   const { deleteTask } = useContext(TaskListContext);
 
@@ -49,18 +45,15 @@ const Task = (props: TaskProps) => {
 
       {/* button to edit task from main tasklist */}
       <View style={styles.subContainer}>
-        <TouchableHighlight>
-          <Text>
-            <Icon name="pencil" size={20} color="blue" iconStyle="solid" />
-          </Text>
-        </TouchableHighlight>
+        <TouchableIcon
+          onPress={onDeleteHandler}
+          name="pencil"
+          size={20}
+          color="blue"
+        />
 
         {/* button to delete task from main tasklist */}
-        <TouchableHighlight onPress={onDeleteHandler}>
-          <Text>
-            <Icon name="trash-can" size={20} color="red" iconStyle="solid" />
-          </Text>
-        </TouchableHighlight>
+        <TouchableIcon name="trash-can" size={20} color="red" />
       </View>
     </View>
   );

@@ -1,3 +1,4 @@
+import { TaskContext } from "@/contexts/TaskContext";
 import { TaskListContext } from "@/contexts/TaskListContext";
 import { useContext } from "react";
 import { View } from "react-native";
@@ -12,11 +13,11 @@ const TaskList = () => {
       {/* Display tasks */}
       {taskList.map((task) => {
         return (
-          <Task
-            key={task.id}
-            id={task.id}
-            description={task.description}
-          />
+          <TaskContext.Provider
+            value={{ description: task.description, id: task.id }}
+          >
+            <Task key={task.id}/>
+          </TaskContext.Provider>
         );
       })}
 
